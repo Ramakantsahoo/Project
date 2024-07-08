@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import styles from './Dashboard.module.css';
+import styles from './AdminDashboard.module.css';
 
-const Dashboard = () => {
+const AdminDashboard = () => {
     const [staff, setStaff] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState('');
-    const itemsPerPage = 6; 
+    const itemsPerPage = 6; // Number of items per page
 
     useEffect(() => {
         const fetchStaff = async () => {
@@ -26,6 +27,21 @@ const Dashboard = () => {
         setSearchTerm(e.target.value);
         setCurrentPage(1); // Reset to first page on new search
     };
+
+
+    // Handle delete employee
+
+    const handleDeleteEmployee = async (id) => {
+        try {
+            await axios.delete(`http://localhost:5000/api/staff/${id}`);
+            const updatedStaff = staff.filter(staffMember => staffMember._id !== id);
+            setStaff(updatedStaff);
+        } catch (error) {
+            console.error('Error deleting employee:', error);
+            // Handle error state or display an error message
+        }
+    };
+
 
     // Filtered staff based on search term
     const filteredStaff = staff.filter(
@@ -54,15 +70,16 @@ const Dashboard = () => {
             <div className={styles['report-header']}>
                 <h1 className={styles['recent-Articles']}>Records</h1>
                 <div className={styles.dash}>
-                    <div className={styles['search-container']}>
-                        <input
-                            type="text"
-                            placeholder="Search by name or department..."
-                            value={searchTerm}
-                            onChange={handleSearchChange}
-                            className={styles['search-input']}
-                        />
-                    </div>
+                    <Link to="/add-employee" className={styles['action-button']}>
+                        Add Employee
+                    </Link>
+                    <input
+                        type="text"
+                        placeholder="Search by name or department..."
+                        value={searchTerm}
+                        onChange={handleSearchChange}
+                        className={styles['search-input']}
+                    />
                 </div>
             </div>
 
@@ -71,14 +88,23 @@ const Dashboard = () => {
                     <h3 className={styles['t-op']}>Name</h3>
                     <h3 className={styles['t-op']}>Department</h3>
                     <h3 className={styles['t-op']}>Internal Number</h3>
+                    <h3 className={styles['t-op']}>Actions</h3>
                 </div>
 
                 <div className={styles.items}>
                     {currentItems.map((staffMember) => (
                         <div key={staffMember._id} className={styles.item1}>
-                            <h3 className={styles['t-op-nextlvl']}>{staffMember.name}</h3>
-                            <h3 className={styles['t-op-nextlvl']}>{staffMember.department}</h3>
-                            <h3 className={styles['t-op-nextlvl']}>{staffMember.internalNumber}</h3>
+                            <div className={styles['t-op-nextlvl']}>{staffMember.name}</div>
+                            <div className={styles['t-op-nextlvl']}>{staffMember.department}</div>
+                            <div className={styles['t-op-nextlvl']}>{staffMember.internalNumber}</div>
+                            <div className={styles['actions']}>
+                                <button
+                                    onClick={() => handleDeleteEmployee(staffMember._id)}
+                                    className={styles['delete-button']}
+                                >
+                                    Remove
+                                </button>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -97,4 +123,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default AdminDashboard;
