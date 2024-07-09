@@ -21,15 +21,11 @@ const AdminDashboard = () => {
 
         fetchStaff();
     }, []);
-
-    // Handle search input change
+    
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value);
         setCurrentPage(1); // Reset to first page on new search
     };
-
-
-    // Handle delete employee
 
     const handleDeleteEmployee = async (id) => {
         try {
@@ -38,7 +34,6 @@ const AdminDashboard = () => {
             setStaff(updatedStaff);
         } catch (error) {
             console.error('Error deleting employee:', error);
-            // Handle error state or display an error message
         }
     };
 
