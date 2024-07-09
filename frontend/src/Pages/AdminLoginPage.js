@@ -17,6 +17,7 @@ const AdminLoginPage = () => {
 
       if (response.data.token) {
         localStorage.setItem('adminToken', response.data.token);
+        alert('login successful');
         history.push('/admin/dashboard');
       }
     } catch (error) {

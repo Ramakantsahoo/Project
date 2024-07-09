@@ -7,6 +7,7 @@ const SignupPage = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
 
   const handleSignup = async () => {
     try {
@@ -21,7 +22,7 @@ const SignupPage = () => {
       if (response.ok) {
         alert('User registered successfully');
         console.log('User registered successfully');
-        // Redirect to login page or other page if necessary
+        history.push('/user-login');
       } else {
         const errorData = await response.json();
         alert('Failed to register user: ' + errorData.message);
