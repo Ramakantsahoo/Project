@@ -23,24 +23,6 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
-
-function authenticateToken(req, res, next) {
-  const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1];
-
-  if (token == null) {
-      return res.sendStatus(401); // Unauthorized if token is missing
-  }
-
-  jwt.verify(token, 'secret_key', (err, user) => {
-      if (err) {
-          return res.sendStatus(403); // Forbidden if token is invalid
-      }
-      req.user = user;
-      next(); // Pass the execution to the next middleware
-  });
-}
-
 app.post('/api/admin/login', async (req, res) => {
   const { username, password } = req.body;
 
@@ -57,6 +39,33 @@ app.post('/api/admin/login', async (req, res) => {
       res.status(401).json({ message: 'Invalid username or password' });
     }
   } catch (err) {
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+app.post('/api/user/login', async (req, res) => {
+  const { name, password } = req.body;
+
+  try {
+    const database = client.db('abc_telephone_directory');
+    const userCollection = database.collection('employeeSignup');
+
+    const user = await userCollection.findOne({ name });
+
+    if (!user) {
+      console.log(`User not found: ${name}`);
+      return res.status(401).json({ message: 'Invalid name or password' });
+    }
+
+    if (user.password !== password) {
+      console.log(`Invalid password for user: ${name}`);
+      return res.status(401).json({ message: 'Invalid name or password' });
+    }
+
+    const token = jwt.sign({ name: user.name }, 'secret_key', { expiresIn: '1h' });
+    res.json({ token });
+  } catch (err) {
+    console.error('Server error:', err);
     res.status(500).json({ message: 'Server error' });
   }
 });

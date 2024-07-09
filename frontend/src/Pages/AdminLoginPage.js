@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import styles from './LoginPage.module.css';
+import styles from './AdminLoginPage.module.css';
 
 const AdminLoginPage = () => {
   const [username, setUsername] = useState('');
@@ -64,9 +64,6 @@ const AdminLoginPage = () => {
         </div>
         <div className={styles.buttonContainer}>
           <button onClick={handleLogin} className={styles.buttonadmin}>Login</button>
-        </div>
-        <div className={styles.forgotPasswordContainer}>
-          <a href="#">Forgot Password?</a>
         </div>
       </div>
     </div>
