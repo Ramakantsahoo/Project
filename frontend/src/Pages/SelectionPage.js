@@ -3,7 +3,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './SelectionPage.module.css';
-import drdo from './Images/drdoLogo.png';
+import drdo from './Images/Anchor.png';
 
 const SelectionPage = () => {
   const history = useHistory();
