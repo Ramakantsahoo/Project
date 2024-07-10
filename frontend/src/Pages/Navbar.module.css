@@ -14,11 +14,10 @@ body {
 }
 .topnav {
   overflow: hidden;
-  /* background-color: #001F3F; */
-  background-color: transparent;
+  background-color: #001F3F;
   width: 100%;
   padding: 0.4rem;
-  
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .topnav a {
