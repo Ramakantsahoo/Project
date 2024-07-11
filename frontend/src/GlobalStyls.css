@@ -1,0 +1,24 @@
+/* GlobalStyles.css */
+
+/* Set the height of html and body to 100% to ensure the background image covers the entire viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Apply a global background image to the body */
+  body {
+    background-image: url('/path/to/your/image.jpg'); /* Adjust the path to your image */
+    background-size: cover; /* Make sure the image covers the entire background */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the background image */
+    font-family: Arial, sans-serif; /* You can set a global font family here if desired */
+  }
+  
+  /* Reset some default margins and paddings */
+  * {
+    box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+    margin: 0;
+    padding: 0;
+  }
