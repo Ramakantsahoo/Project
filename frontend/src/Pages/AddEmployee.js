@@ -7,6 +7,7 @@ const AddEmployee = () => {
     const [name, setName] = useState('');
     const [department, setDepartment] = useState('');
     const [internalNumber, setInternalNumber] = useState('');
+    const [password, setPassword] = useState('');
     const history = useHistory();
 
     const handleSubmit = async (e) => {
@@ -16,6 +17,7 @@ const AddEmployee = () => {
                 name,
                 department,
                 internalNumber,
+                password,
             });
             if (response.status === 201) {
                 alert('Employee added successfully');
@@ -53,6 +55,14 @@ const AddEmployee = () => {
                     placeholder="Internal Number"
                     value={internalNumber}
                     onChange={(e) => setInternalNumber(e.target.value)}
+                    required
+                />
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     required
                 />
                 <button type="submit" className={styles['submit-button']}>Add</button>

@@ -1,127 +1,127 @@
 
 
-  body {
-    font-family: Arial, sans-serif;
-    background: #ededed;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-  }
-  
-  .containeradmin {
-    display: flex;
-    width: 800px;
-    height: 500px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-  
-  .loginSection, .welcomeSection {
-    flex: 1;
-    display: flex;
+body {
+  font-family: Arial, sans-serif;
+  background: #ededed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.containeradmin {
+  display: flex;
+  width: 400px;
+  height: 500px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.loginSection, .welcomeSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.loginSection {
+  background: #001F3F;
+}
+
+.welcomeSection {
+  background: #313131;
+  color: #f7f7f7;
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.inputContainer {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.buttonContainer {
+  width: 100%;
+}
+
+.buttonadmin {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttonadmin:hover {
+  background-color: #0056b3;
+}
+
+.signupButtongreen {
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  width: 100%;
+  background-color: #28a745;
+}
+
+.signupButtongreen:hover {
+  background-color: #218838;
+}
+
+.forgotPasswordContainer {
+  margin-top: 10px;
+}
+
+.forgotPasswordContainer a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.forgotPasswordContainer a:hover {
+  color: #0056b3;
+}
+
+@media (max-width: 800px) {
+  .container {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
+    width: 90%;
+    height: auto;
   }
-  
-  .loginSection {
-    background: #001F3F;
-  }
-  
-  .welcomeSection {
-    background: #313131;
-    color: #f7f7f7;
-  }
-  
-  h2 {
-    margin-bottom: 30px;
-    font-size: 24px;
-    text-align: center;
-  }
-  
-  p {
-    margin-bottom: 20px;
-    font-size: 16px;
-    text-align: center;
-  }
-  
-  .inputContainer {
-    margin-bottom: 20px;
-    width: 100%;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
-  }
-  
-  input:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  .buttonContainer {
-    width: 100%;
-  }
-  
-  .buttonadmin {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .buttonadmin:hover {
-    background-color: #0056b3;
-  }
-  
-  .signupButtongreen {
-    margin-top: 30px;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    color: white;
-    width: 100%;
-    background-color: #28a745;
-  }
-  
-  .signupButtongreen:hover {
-    background-color: #218838;
-  }
-  
-  .forgotPasswordContainer {
-    margin-top: 10px;
-  }
-  
-  .forgotPasswordContainer a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .forgotPasswordContainer a:hover {
-    color: #0056b3;
-  }
-  
-  @media (max-width: 800px) {
-    .container {
-      flex-direction: column;
-      width: 90%;
-      height: auto;
-    }
-  }
+}

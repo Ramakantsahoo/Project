@@ -325,9 +325,10 @@ body {
 
 /* Pagination */
 .pagination {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 .paginationButton {
   padding: 8px 16px;
@@ -346,6 +347,19 @@ body {
 }
 .pagination .rightButton {
   margin-left: auto;
+}
+.paginationInfo{
+  font-weight: 650;
+  font-size: 16px;
+  margin: 0 20px;
+  color: #022D59;
+}
+.transparent {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.paginationButton {
+  transition: opacity 0.3s ease;
 }
 
 /* Responsive CSS Here */

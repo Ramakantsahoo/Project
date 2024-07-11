@@ -348,6 +348,20 @@ body {
   margin-left: auto;
 }
 
+.paginationInfo{
+  font-weight: 650;
+  font-size: 16px;
+  margin: 0 20px;
+  color: #022D59;
+}
+.transparent {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.paginationButton {
+  transition: opacity 0.3s ease;
+}
+
 /* Responsive CSS Here */
 @media screen and (max-width: 950px) {
   .report-topic-heading,

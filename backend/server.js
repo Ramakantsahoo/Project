@@ -48,7 +48,7 @@ app.post('/api/user/login', async (req, res) => {
 
   try {
     const database = client.db('abc_telephone_directory');
-    const userCollection = database.collection('employeeSignup');
+    const userCollection = database.collection('staff');
 
     const user = await userCollection.findOne({ name });
 
@@ -98,13 +98,13 @@ app.get('/api/staff', async (req, res) => {
   });
 
   app.post('/api/staff', async (req, res) => {
-    const { name, department, internalNumber } = req.body;
+    const { name, department, internalNumber, password } = req.body;
 
     try {
         const database = client.db('abc_telephone_directory');
         const staffCollection = database.collection('staff');
 
-        const result = await staffCollection.insertOne({ name, department, internalNumber });
+        const result = await staffCollection.insertOne({ name, department, internalNumber, password });
         res.status(201).json(result);
     } catch (err) {
         res.status(500).json({ message: 'Server error' });

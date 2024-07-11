@@ -28,10 +28,6 @@ const UserLoginPage = () => {
     }
   };
 
-  const handleSignupClick = () => {
-    history.push('/signup');
-  };
-
   return (
     <div className={styles.containeradmin}>
       <div className={styles.loginSection}>
@@ -39,7 +35,7 @@ const UserLoginPage = () => {
         <div className={styles.inputContainer}>
           <input
             type="text"
-            placeholder="User ID"
+            placeholder="Full Name"
             value={name}
             onChange={(e) => setUsername(e.target.value)}
             className={styles.input}
@@ -57,11 +53,6 @@ const UserLoginPage = () => {
         <div className={styles.buttonContainer}>
           <button onClick={handleLogin} className={styles.buttonadmin}>Login</button>
         </div>
-      </div>
-      <div className={styles.welcomeSection}>
-        <h2>Hello, Friend!</h2>
-        <p>Register with your personal details to use all of our site's features.</p>
-        <button className={styles.signupButtongreen} onClick={handleSignupClick}>Sign Up</button>
       </div>
     </div>
   );

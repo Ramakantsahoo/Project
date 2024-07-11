@@ -21,33 +21,32 @@ const Dashboard = () => {
         fetchStaff();
     }, []);
 
-    // Handle search input change
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value);
-        setCurrentPage(1); // Reset to first page on new search
+        setCurrentPage(1);
     };
 
-    // Filtered staff based on search term
     const filteredStaff = staff.filter(
         (staffMember) =>
             staffMember.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
             staffMember.department.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Calculate the index range for current page
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = filteredStaff.slice(indexOfFirstItem, indexOfLastItem);
 
-    // Pagination - Next Page Handler
     const nextPage = () => {
         setCurrentPage(currentPage + 1);
     };
 
-    // Pagination - Previous Page Handler
     const prevPage = () => {
         setCurrentPage(currentPage - 1);
     };
+
+    const startIndex = indexOfFirstItem + 1;
+    const endIndex = indexOfLastItem > filteredStaff.length ? filteredStaff.length : indexOfLastItem;
+    const totalItems = filteredStaff.length;
 
     return (
         <div className={styles['report-container']}>
@@ -83,12 +82,22 @@ const Dashboard = () => {
                     ))}
                 </div>
 
-                {/* Pagination Buttons */}
                 <div className={styles.pagination}>
-                    <button onClick={prevPage} className={`${styles.paginationButton} ${styles.leftButton}`} disabled={currentPage === 1}>
+                    <button
+                        onClick={prevPage}
+                        className={`${styles.paginationButton} ${styles.leftButton} ${currentPage === 1 ? styles.transparent : ''}`}
+                        disabled={currentPage === 1}
+                    >
                         Back
                     </button>
-                    <button onClick={nextPage} className={`${styles.paginationButton} ${styles.rightButton}`} disabled={currentItems.length < itemsPerPage}>
+                    <span className={styles.paginationInfo}>
+                        {startIndex} - {endIndex} of {totalItems} results
+                    </span>
+                    <button
+                        onClick={nextPage}
+                        className={`${styles.paginationButton} ${styles.rightButton} ${currentItems.length < itemsPerPage ? styles.transparent : ''}`}
+                        disabled={currentItems.length < itemsPerPage}
+                    >
                         Next
                     </button>
                 </div>

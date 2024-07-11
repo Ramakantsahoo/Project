@@ -4,8 +4,8 @@
     margin-top: 65px; 
     padding: 20px;
     text-align: center;
-    /* background: url('Images/6.jpg'); */
-    color:rgb(18, 18, 18);
+    background: linear-gradient(to bottom right, #001F3F, #0d41c4);
+    color:#def2f9;
     min-height: calc(100vh - 65px);
 }
 .about-container::before {
@@ -48,7 +48,7 @@
     font-size: 2.5em;
     font-weight: 300;
     margin-bottom: 20px;
-    color: rgb(231, 226, 226);
+    color: #def2f9;
 }
 
 .about-container p {
@@ -66,11 +66,12 @@
     
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   
 }
 
 .team-member {
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #def2f9;
     border-radius: 28px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     text-align: center;
