@@ -30,6 +30,7 @@ const AdminDashboard = () => {
     const handleDeleteEmployee = async (id) => {
         try {
             await axios.delete(`http://localhost:5000/api/staff/${id}`);
+            
             const updatedStaff = staff.filter(staffMember => staffMember._id !== id);
             setStaff(updatedStaff);
         } catch (error) {
