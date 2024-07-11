@@ -8,8 +8,7 @@ const About = () => {
             <p>
             Welcome to our Telephone Directory Management System!
              <br />
-           We are a dedicated team of interns passionate about technology and innovation. Together, we are committed to creating a 
-           user-friendly and efficient telephone directory management system to streamline contact organization and accessibility.
+             We are dedicated to crafting an intuitive and efficient telephone directory management system that enhances the way contacts are organized and accessed. Our focus is on creating a seamless user experience, ensuring that individuals and organizations can easily manage and find their contacts with convenience and reliability. By prioritizing user-friendliness and efficiency, our system aims to simplify communication processes and promote greater productivity in everyday interactions.
 
             </p>
             <p>

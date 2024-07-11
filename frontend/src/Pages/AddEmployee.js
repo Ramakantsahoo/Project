@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import styles from './AddEmployee.module.css';
+import logo from "./Images/Anchor.png";
 
 const AddEmployee = () => {
     const [name, setName] = useState('');
@@ -31,42 +32,45 @@ const AddEmployee = () => {
 
     return (
         <div className={styles['add-employee-container']}>
-            <h2>Add Employee</h2>
-            <form onSubmit={handleSubmit} className={styles['add-employee-form']}>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    name="department"
-                    placeholder="Department"
-                    value={department}
-                    onChange={(e) => setDepartment(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    name="internalNumber"
-                    placeholder="Internal Number"
-                    value={internalNumber}
-                    onChange={(e) => setInternalNumber(e.target.value)}
-                    required
-                />
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <button type="submit" className={styles['submit-button']}>Add</button>
-            </form>
+            <div className={styles['form-box']}>
+                <img src={logo} alt="Company Logo" className={styles['logo']} />
+                <h2>Add Employee</h2>
+                <form onSubmit={handleSubmit} className={styles['add-employee-form']}>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="text"
+                        name="department"
+                        placeholder="Department"
+                        value={department}
+                        onChange={(e) => setDepartment(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="text"
+                        name="internalNumber"
+                        placeholder="Internal Number"
+                        value={internalNumber}
+                        onChange={(e) => setInternalNumber(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                    <button type="submit" className={styles['submit-button']}>Add</button>
+                </form>
+            </div>
         </div>
     );
 };

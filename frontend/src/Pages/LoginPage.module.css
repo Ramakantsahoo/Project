@@ -1,8 +1,6 @@
-
-
 body {
-  font-family: Arial, sans-serif;
-  background: #ededed;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -10,44 +8,38 @@ body {
   margin: 0;
 }
 
-.containeradmin {
+.container {
   display: flex;
   width: 400px;
-  height: 500px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  /* background: #fff; */
+  border-radius: 12px;
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
   overflow: hidden;
   transition: all 0.3s ease;
+  padding: 20px;
 }
 
-.loginSection, .welcomeSection {
+.loginSection {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 30px 40px;
+  background: #001f3f;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.loginSection {
-  background: #001F3F;
-}
-
-.welcomeSection {
-  background: #313131;
-  color: #f7f7f7;
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
 }
 
 h2 {
-  margin-bottom: 30px;
-  font-size: 24px;
-  text-align: center;
-}
-
-p {
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 28px;
   text-align: center;
 }
 
@@ -58,15 +50,15 @@ p {
 
 input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
   box-sizing: border-box;
-  transition: border-color 0.3s;
+  transition: box-shadow 0.3s;
 }
 
 input:focus {
-  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   outline: none;
 }
 
@@ -74,34 +66,20 @@ input:focus {
   width: 100%;
 }
 
-.buttonadmin {
+.button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 10px;
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-.buttonadmin:hover {
+.button:hover {
   background-color: #0056b3;
-}
-
-.signupButtongreen {
-  margin-top: 30px;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  color: white;
-  width: 100%;
-  background-color: #28a745;
-}
-
-.signupButtongreen:hover {
-  background-color: #218838;
 }
 
 .forgotPasswordContainer {
@@ -118,10 +96,8 @@ input:focus {
   color: #0056b3;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   .container {
-    flex-direction: column;
     width: 90%;
-    height: auto;
   }
 }

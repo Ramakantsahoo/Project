@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './LoginPage.module.css';
 import axios from 'axios';
+import logo from "./Images/Anchor.png";
 
 const UserLoginPage = () => {
   const [name, setUsername] = useState('');
@@ -29,8 +30,9 @@ const UserLoginPage = () => {
   };
 
   return (
-    <div className={styles.containeradmin}>
+    <div className={styles.container}>
       <div className={styles.loginSection}>
+        <img src={logo} alt="Logo" className={styles.logo} />
         <h2>Login</h2>
         <div className={styles.inputContainer}>
           <input
@@ -51,7 +53,7 @@ const UserLoginPage = () => {
           />
         </div>
         <div className={styles.buttonContainer}>
-          <button onClick={handleLogin} className={styles.buttonadmin}>Login</button>
+          <button onClick={handleLogin} className={styles.button}>Login</button>
         </div>
       </div>
     </div>

@@ -1,9 +1,6 @@
-/* styles.css */
 
-/* Navbar Styles */
-/* About Page Styles */
 .about-container {
-    margin-top: 65px; /* To account for the fixed navbar */
+    margin-top: 15px;
     padding: 20px;
     text-align: center;
     background: linear-gradient(to bottom right, #001F3F, #0d41c4);
@@ -27,6 +24,7 @@
 .about-container p {
     font-size: 1.2em;
     margin: 10px 0;
+    font-weight: 500;
 }
 
 .team-grid {

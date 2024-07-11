@@ -9,7 +9,6 @@ import Home from './Pages/HomePage';
 import SelectionPage from './Pages/SelectionPage';
 import AdminLoginPage from './Pages/AdminLoginPage';
 import UserLoginPage from './Pages/UserLoginPage';
-import SignupPage from './Pages/SignupPage';
 import AddEmployee from './Pages/AddEmployee';
 
 const App = () => {
@@ -22,7 +21,7 @@ const App = () => {
 
 const Main = () => {
   const location = useLocation();
-  const noNavPaths = ['/']; 
+  const noNavPaths = ['/', '/user-login', '/admin-login', '/add-employee']; // Paths where Navbar should not be shown
 
   return (
     <div className="App">
@@ -35,7 +34,6 @@ const Main = () => {
         <Route exact path="/admin/dashboard" component={AdminDashboard} />
         <Route path="/add-employee" component={AddEmployee} />
         <Route exact path="/user/dashboard" component={Dashboard} />
-        <Route exact path="/signup" component={SignupPage} />
         <Route exact path="/about" component={About} />
       </Switch>
     </div>

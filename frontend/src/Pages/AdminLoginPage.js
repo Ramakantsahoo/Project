@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import styles from './AdminLoginPage.module.css';
+import drdo from "./Images/Anchor.png";
 
 const AdminLoginPage = () => {
   const [username, setUsername] = useState('');
@@ -17,34 +18,29 @@ const AdminLoginPage = () => {
 
       if (response.data.token) {
         localStorage.setItem('adminToken', response.data.token);
-        alert('login successful');
+        alert('Login successful');
         history.push('/admin/dashboard');
       }
     } catch (error) {
       if (error.response) {
-        // Server responded with a status other than 2
         console.error('Login failed:', error.response.data.message);
         alert('Invalid username or password');
       } else if (error.request) {
-        // Request was made but no response was received
         console.error('No response received:', error.request);
         alert('No response from the server. Please try again later.');
       } else {
-        // Something else happened
         console.error('Error:', error.message);
         alert('An error occurred. Please try again.');
       }
     }
   };
 
-  const handleSignupClick = () => {
-    history.push('/signup');
-  };
-
   return (
     <div className={styles.containeradmin}>
       <div className={styles.loginSection}>
-        <h2>Admin Login</h2>
+        <img src={drdo} alt="Logo" className={styles.logo} />
+        <h2>Welcome!</h2>
+        <p>Please login to continue</p>
         <div className={styles.inputContainer}>
           <input
             type="text"
