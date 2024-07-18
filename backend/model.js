@@ -16,6 +16,7 @@ const departmentSchema = new Schema({
 // Staff Schema
 const staffSchema = new Schema({
   name: { type: String, required: true },
+  status: {type: Boolean, required: true},
   department: { type: String, required: true },
   internalNumber: { type: String, required: true },
   password: { type: String, required: true },
