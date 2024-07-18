@@ -130,7 +130,7 @@ app.post('/api/staff', async (req, res) => {
   }
 });
 
-app.post('/api/staff/:id', async (req, res) => {
+app.delete('/api/staff/:id', async (req, res) => {
   const { id } = req.params;
 
   try {
