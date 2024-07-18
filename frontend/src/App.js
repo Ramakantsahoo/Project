@@ -21,7 +21,7 @@ const App = () => {
 
 const Main = () => {
   const location = useLocation();
-  const noNavPaths = ['/', '/user-login', '/admin-login', '/add-employee']; // Paths where Navbar should not be shown
+  const noNavPaths = ['/', '/about']; // Paths where Navbar should not be shown
 
   return (
     <div className="App">
